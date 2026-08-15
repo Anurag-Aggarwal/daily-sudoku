@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudoku</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header>
+        <p class="eyebrow">A daily little ritual</p>
+        <h1>Sudoku</h1>
+        <p class="subtitle">Fill every row, column, and box with 1-9.</p>
+      </header>
+
+      <section class="game-area" aria-label="Sudoku game">
+        <div id="board" class="board" role="grid" aria-label="Sudoku board" aria-rowcount="9" aria-colcount="9"></div>
+        <aside class="panel">
+          <label class="difficulty-label" for="difficulty">Difficulty</label>
+          <select id="difficulty" aria-label="Choose difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <div class="stat"><span>Time</span><strong id="timer">00:00</strong></div>
+          <div class="stat"><span>Mistakes</span><strong id="mistakes">0 / 3</strong></div>
+          <div class="rule"></div>
+          <p id="message" class="message" aria-live="polite">Generating a unique puzzle...</p>
+          <button id="notes-toggle" class="notes-toggle" type="button" aria-pressed="false">
+            Pencil marks <span class="notes-toggle-state">off</span>
+          </button>
+          <div class="number-pad" aria-label="Number pad">
+            <button type="button" data-number="1">1</button><button type="button" data-number="2">2</button><button type="button" data-number="3">3</button>
+            <button type="button" data-number="4">4</button><button type="button" data-number="5">5</button><button type="button" data-number="6">6</button>
+            <button type="button" data-number="7">7</button><button type="button" data-number="8">8</button><button type="button" data-number="9">9</button>
+          </div>
+          <button id="erase" class="text-button" type="button">Erase selected</button>
+          <button id="hint" class="hint-button" type="button">Give me a hint <span>-&gt;</span></button>
+          <button id="new-game" class="new-button" type="button">New puzzle</button>
+        </aside>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
